@@ -4,7 +4,7 @@ class Solution {
     public int[] solution(String[] id_list, String[] report, int k) {
         int[] answer = {};
         
-                Map<String, String> singohan = new HashMap<>();
+        Map<String, String> singohan = new HashMap<>();
         Map<String, Integer> singodang = new HashMap<>();
         Set<String> removeReport = new HashSet<>();
         Map<String, Integer> mailReturn = new HashMap<>();
@@ -18,10 +18,6 @@ class Solution {
         removeReport.addAll(Arrays.asList(report));
 
         report = removeReport.toArray(new String[0]);
-
-//        for(String str : report){
-//            System.out.println("value => " + str);
-//        }
 
         for(int i = 0; i < report.length; i++){
             String[] reportStr = report[i].split(" ");
@@ -46,7 +42,6 @@ class Solution {
                         }
 
                         if(singohanStr[a].equals(id_list[i])){
-//                            mailReturn.put(id_list[j], mailReturn.get(id_list[i]) + 1);
                             answer[j] = answer[j] + 1;
                         }
                     }
