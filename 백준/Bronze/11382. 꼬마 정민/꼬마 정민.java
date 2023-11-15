@@ -1,18 +1,11 @@
 import java.util.Scanner;
-class Main {
+
+public class Main {
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
-
-        String intStr = sc.nextLine();
-
-        String[] intArr = intStr.split(" ");
-
-        long result = 0;
-        for(String num : intArr){
-            long number = Long.parseLong(num);
-            result += number;
-        }
-        System.out.println(result);
+        long a = sc.nextLong();
+        long b = sc.nextLong();
+        long c = sc.nextLong();
+        System.out.println(a+b+c);
     }
 }
