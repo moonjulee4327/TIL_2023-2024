@@ -6,6 +6,7 @@ public class Main {
         long a = sc.nextLong();
         long b = sc.nextLong();
         long c = sc.nextLong();
+        sc.close();
         System.out.println(a+b+c);
     }
 }
