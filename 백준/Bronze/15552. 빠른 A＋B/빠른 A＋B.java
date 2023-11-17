@@ -13,11 +13,11 @@ public class Main {
         for(int i = 0; i < num; i++){
             String inputNumber = br.readLine();
             // 방법 1
-            String[] inputNumberArr = inputNumber.split(" ");
-            result = Integer.parseInt(inputNumberArr[0]) + Integer.parseInt(inputNumberArr[1]);
+//            String[] inputNumberArr = inputNumber.split(" ");
+//            result = Integer.parseInt(inputNumberArr[0]) + Integer.parseInt(inputNumberArr[1]);
             // 방법 2
-//            StringTokenizer st = new StringTokenizer(inputNumber);
-//            result = Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken());
+            StringTokenizer st = new StringTokenizer(inputNumber);
+            result = Integer.parseInt(st.nextToken()) + Integer.parseInt(st.nextToken());
 
             bw.write(result + "\n");
         }
