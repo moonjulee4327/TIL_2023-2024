@@ -7,27 +7,18 @@ public class Main {
         int totalAmount = sc.nextInt();
         int totalQuantity = sc.nextInt();
 
-//        System.out.println(totalQuantity);
-
-        String[] amountQuantityArr = new String[totalQuantity * 2];
-        for(int i = 0; i < (totalQuantity * 2); i++){
-            amountQuantityArr[i] = sc.next();
+        int sum = 0;
+        for(int i = 0; i < totalQuantity; i++){
+            int price = sc.nextInt();
+            int quantity = sc.nextInt();
+            sum += price * quantity;
         }
         sc.close();
         
-        int result = 0;
-        for(int i = 0; i < (totalQuantity * 2); i++){
-            if(i % 2 != 0) {
-                result += Integer.parseInt(amountQuantityArr[i-1]) * Integer.parseInt(amountQuantityArr[i]);
-            }
-        }
-
-        String flag = "";
-        if(totalAmount == result){
-            flag = "Yes";
+        if(totalAmount == sum){
+            System.out.println("Yes");
         }else {
-            flag = "No";
+            System.out.println("No");
         }
-        System.out.println(flag);
     }
 }
