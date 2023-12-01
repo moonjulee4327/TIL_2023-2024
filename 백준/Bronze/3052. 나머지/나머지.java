@@ -1,15 +1,13 @@
 import java.io.*;
 import java.util.HashSet;
-import java.util.Set;
 
 public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        Set numHashSet = new HashSet();
+        HashSet<Integer> numHashSet = new HashSet<Integer>();
         for(int i = 0; i < 10; i++){
-            int n = Integer.parseInt(br.readLine());
-            numHashSet.add(n % 42);
+            numHashSet.add(Integer.parseInt(br.readLine()) % 42);
         }
         br.close();
 
