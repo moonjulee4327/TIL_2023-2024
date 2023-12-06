@@ -10,18 +10,15 @@ public class Main {
             numArr[i] = -1;
         }
 
-        String[] S = br.readLine().split("");
+        String S = br.readLine();
 
-        for(int j = 0; j < S.length; j++){
-            for(char k = 'a'; k <= 'z'; k++){
-                if(numArr[k - 'a'] != -1){
-                    continue;
-                }
+        for(int j = 0; j < S.length(); j++){
+            char SChar = S.charAt(j);
 
-                if(S[j].equals(k+"")){
-                    numArr[k - 'a'] = j;
-                }
+            if(numArr[SChar - 'a'] == -1){
+                numArr[SChar - 'a'] = j;
             }
+
         }
 
         br.close();
