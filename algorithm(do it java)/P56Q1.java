@@ -1,11 +1,8 @@
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Random;
 
 public class P56Q1 {
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         Random random = new Random();
 
         System.out.println("사람 키의 최대값을 구합니다.");
@@ -19,7 +16,6 @@ public class P56Q1 {
             height[i] = 100 + random.nextInt(90);
             System.out.println("height[" + i + "] " + height[i] + "cm");
         }
-
         System.out.println("최대값은 " + maxOf(height) + "cm 입니다.");
     }
 
