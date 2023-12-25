@@ -16,6 +16,7 @@ public class P61Q3 {
             System.out.print("num[" + i + "] : ");
             numArr[i] = Integer.parseInt(br.readLine());
         }
+        br.close();
 
         for (int i = 0; i < numArr.length; i++){
             System.out.print(numArr[i] + " ");

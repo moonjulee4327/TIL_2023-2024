@@ -16,12 +16,15 @@ public class P61Q2 {
             System.out.print("num[" + i + "] : ");
             numArr[i] = Integer.parseInt(br.readLine());
         }
+        br.close();
 
         for (int i = 0; i < numArr.length; i++){
             System.out.print(numArr[i] + " ");
         }
 
         reverse(numArr);
+
+
 
         // 연습문제 코드
 //        System.out.println("요소를 역순으로 정렬했습니다!");

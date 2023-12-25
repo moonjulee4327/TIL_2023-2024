@@ -15,6 +15,7 @@ public class P64Q4 {
             System.out.print("요소 값을 넣어주세요(" + (i + 1) + "/" + idx + ") : ");
             numArr[i] = Integer.parseInt(br.readLine());
         }
+        br.close();
 
         System.out.println("배열을 복사하겠습니다.");
         int[] numArrA = new int[idx];
