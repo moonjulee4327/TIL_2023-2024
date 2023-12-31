@@ -4,8 +4,8 @@ import java.io.InputStreamReader;
 
 public class P82Exam {
     static int[][] mdays = {
-            {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31},
-            {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}
+            {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}, // 평년
+            {31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31} // 윤년
     };
 
     public static void main(String[] args) throws IOException {
@@ -26,13 +26,14 @@ public class P82Exam {
         }while (retry == 1);
     }
 
+    // 윤년 판단
     public static int isLeap(int year){
         return (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) ? 1 : 0;
     }
 
     public static int dayOfYear(int y, int m, int d){
         int days = d;
-        for(int i = 1; i < m; i++){
+        for(int i = 1; i < m; i++){ // month를 생각해서 i = 1.
             days += mdays[isLeap(y)][i - 1];
         }
         return days;
