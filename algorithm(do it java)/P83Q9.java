@@ -22,15 +22,13 @@ public class P83Q9 {
     }
 
     public static int leftDayOfYear(int y, int m, int d){
-        int year = P82Exam.isLeap(y);
-        int days = 0;
+        int days = d;
 
-        int i;
-        for(i = P82Exam.mdays[year].length - 1; i > m - 1; i--){
-            days += P82Exam.mdays[year][i];
+        for(int i = 1; i < m; i++){
+            days += P82Exam.mdays[P82Exam.isLeap(y)][i - 1];
         }
-        days += P82Exam.mdays[year][i] - d;
 
-        return days;
+        // [365(평년)] + [isLeap(y) (윤년일 경우 1, 평년일 경우 0)] - [(m-1)의 일수와 입력한 달의 경과 일수]
+        return 365 + P82Exam.isLeap(y) - days;
     }
 }

@@ -22,8 +22,8 @@ public class P83Q8 {
     }
 
     public static int dayOfYear(int y, int m, int d){
-        while (m > 1){
-            d += P82Exam.mdays[P82Exam.isLeap(y)][--m];
+        while (--m != 0){
+            d += P82Exam.mdays[P82Exam.isLeap(y)][m - 1];
         }
         return d;
     }
