@@ -15,7 +15,7 @@ public class P93Q10 {
                 , new P91Exam.PhyscData("박용규", 169, 0.8)
         };
 
-        String[] vdist = new String[P91Exam.VMAX];
+        int[] vdist = new int[P91Exam.VMAX];
 
         System.out.println("■ 신체검사 리스트 ■");
         System.out.println("이름    키    시력");
@@ -31,22 +31,20 @@ public class P93Q10 {
 
         System.out.println("\n시력 분포");
         for (int i = 1; i < P91Exam.VMAX; i++){
-            System.out.printf("%3.1f ~ : %2s\n", i / 10.0, vdist[i]);
+            System.out.printf("%3.1f ~ : ", i / 10.0);
+            for(int j = 0; j < vdist[i]; j++){
+                System.out.print("*");
+            }
+            System.out.println();
         }
     }
 
-    public static void disVisionQ10(P91Exam.PhyscData[] dat, String[] dist){
-        String star = "*";
-
-        for(int i = 0; i < dist.length; i++){
-            if(dist[i] == null){
-                dist[i] = "";
-            }
-        }
-
-        for(int i = 0; i < dat.length; i++){
+    public static void disVisionQ10(P91Exam.PhyscData[] dat, int[] dist){
+        int i = 0;
+        dist[i] = 0;
+        for(i = 0; i < dat.length; i++){
             if(dat[i].vision >= 0.0 && dat[i].vision <= P91Exam.VMAX / 10.0){
-                dist[(int)(dat[i].vision * 10)] += star;
+                dist[(int)(dat[i].vision * 10)]++;
             }
         }
     }
