@@ -42,8 +42,8 @@ public class P93Q11 {
             }
 
             temp.d += n;
-            while (temp.d > mdays[isLeap(this.y)][this.m - 1]){
-                temp.d -= mdays[isLeap(this.y)][this.m - 1];
+            while (temp.d > mdays[isLeap(temp.y)][temp.m - 1]){
+                temp.d -= mdays[isLeap(temp.y)][temp.m - 1];
                 if(++temp.m > 12){
                     temp.y++;
                     temp.m = 1;
@@ -64,7 +64,7 @@ public class P93Q11 {
                     temp.y--;
                     temp.m = 12;
                 }
-                temp.d += mdays[isLeap(this.y)][temp.m - 1];
+                temp.d += mdays[isLeap(temp.y)][temp.m - 1];
             }
             return temp;
         }
