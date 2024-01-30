@@ -25,4 +25,35 @@ public class P148ExamIntQueue {
         }
     }
 
+    public int enque(int x) throws OverflowIntQueueException{
+        if(num >= max){
+            throw new OverflowIntQueueException();
+        }
+        que[rear++] = x;
+        num++;
+        if (rear == max){
+            rear = 0;
+        }
+        return x;
+    }
+
+    public int deque() throws EmptyIntQueueException{
+        if (num == 0){
+            throw new EmptyIntQueueException();
+        }
+        int x = que[front++];
+        num--;
+        if (front == max){
+            front = 0;
+        }
+        return x;
+    }
+
+    // 다음에 빠져 나올 값 출력
+    public int peek() throws EmptyIntQueueException{
+        if (num <= 0){
+            throw new EmptyIntQueueException();
+        }
+        return que[front];
+    }
 }
