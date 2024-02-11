@@ -17,15 +17,10 @@ public class P170Q2 {
     }
 
     private static int gcd(int x, int y) {
-        if(y > x){
-            int temp = x;
-            x = y;
-            y = temp;
-        }
         while (y != 0){
-            int temp = x;
-            x = y;
-            y = temp % y;
+            int temp = y;
+            y = x % y;
+            x = temp;
         }
         return x;
     }
