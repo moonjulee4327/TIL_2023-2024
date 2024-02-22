@@ -1,5 +1,3 @@
-package doItJava;
-
 public class P176Exam {
     public static void main(String[] args) {
         recur(4);
