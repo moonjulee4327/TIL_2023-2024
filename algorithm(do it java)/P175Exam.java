@@ -1,5 +1,3 @@
-package doItJava;
-
 public class P175Exam {
     public static void main(String[] args) {
         recurX(4);
