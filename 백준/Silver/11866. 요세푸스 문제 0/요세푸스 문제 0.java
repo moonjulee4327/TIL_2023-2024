@@ -21,17 +21,12 @@ public class Main {
             }
 
             String[] resultArr = new String[num];
-            int resultIdx = 0;
 
             for(int i = 0; i < num; i++){
                 for (int j = 0; j < removeNum - 1; j++){
-                    int temp = roundNum.peek();
-                    roundNum.add(temp);
-                    roundNum.remove();
+                    roundNum.add(roundNum.remove());
                 }
-                int resultTemp = roundNum.peek();
-                resultArr[i] = String.valueOf(resultTemp);
-                roundNum.remove();
+                resultArr[i] = String.valueOf(roundNum.remove());
             }
 
             sb.append("<");
@@ -41,7 +36,6 @@ public class Main {
             sb.append(resultArr[num - 1] + ">");
 
             System.out.println(sb);
-
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
