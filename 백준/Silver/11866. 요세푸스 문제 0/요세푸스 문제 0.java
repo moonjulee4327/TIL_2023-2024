@@ -7,22 +7,23 @@ import java.util.Queue;
 public class Main {
     public static void main(String[] args) {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
 
         try {
             String[] numArr = br.readLine().split(" ");
-            int idx = Integer.parseInt(numArr[0]);
+            int num = Integer.parseInt(numArr[0]);
             int removeNum = Integer.parseInt(numArr[1]);
 
             Queue<Integer> roundNum = new LinkedList<>();
 
-            for (int i = 1; i <= idx; i++){
+            for (int i = 1; i <= num; i++){
                 roundNum.add(i);
             }
 
-            String[] resultArr = new String[idx];
+            String[] resultArr = new String[num];
             int resultIdx = 0;
 
-            for(int i = 0; i < idx; i++){
+            for(int i = 0; i < num; i++){
                 for (int j = 0; j < removeNum - 1; j++){
                     int temp = roundNum.peek();
                     roundNum.add(temp);
@@ -33,19 +34,13 @@ public class Main {
                 roundNum.remove();
             }
 
-            if (idx != 1){
-                for (int i = 0; i < idx; i++){
-                    if (i == 0){
-                        System.out.print("<" + resultArr[i] + ", ");
-                    } else if (i == idx - 1) {
-                        System.out.print(resultArr[i] + ">");
-                    }else {
-                        System.out.print(resultArr[i] + ", ");
-                    }
-                }
-            }else {
-                System.out.print("<" + 1 + ">");
+            sb.append("<");
+            for (int i = 0; i < num - 1; i++){
+                sb.append(resultArr[i]).append(", ");
             }
+            sb.append(resultArr[num - 1] + ">");
+
+            System.out.println(sb);
 
         } catch (IOException e) {
             throw new RuntimeException(e);
