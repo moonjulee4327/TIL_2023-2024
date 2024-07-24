@@ -20,20 +20,14 @@ public class Main {
                 roundNum.add(i);
             }
 
-            String[] resultArr = new String[num];
-
-            for(int i = 0; i < num; i++){
+			sb.append("<");
+            for(int i = 0; i < num - 1; i++){
                 for (int j = 0; j < removeNum - 1; j++){
                     roundNum.add(roundNum.remove());
                 }
-                resultArr[i] = String.valueOf(roundNum.remove());
+				sb.append(roundNum.remove()).append(", ");
             }
-
-            sb.append("<");
-            for (int i = 0; i < num - 1; i++){
-                sb.append(resultArr[i]).append(", ");
-            }
-            sb.append(resultArr[num - 1] + ">");
+			sb.append(roundNum.remove()).append(">");
 
             System.out.println(sb);
         } catch (IOException e) {
