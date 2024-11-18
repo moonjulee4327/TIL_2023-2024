@@ -9,7 +9,6 @@ public class Main {
     public static void main(String[] args) throws Exception{
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
-        StringBuffer sb = new StringBuffer();
 
         String str = br.readLine();
         int M = Integer.parseInt(br.readLine());
